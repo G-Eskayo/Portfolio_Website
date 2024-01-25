@@ -736,7 +736,8 @@ ul ul {
 .list-inline,
 .list-unstyled {
     padding-left: 0;
-    list-style: none
+    list-style: none;
+    font-size: 18px
 }
 
 .list-inline {
@@ -5896,10 +5897,20 @@ blockquote small {
 .fa-icon {
     color: #000;
     width: 32px;
-    height: 32px;
+    height: 0px;
     display: inline-block;
     line-height: 32px;
-    font-size: 15px;
+    font-size: 25px;
+    text-align: center
+}
+
+.fa-icon-portfo{
+    color: #000;
+    width: 64px;
+    height: 0px;
+    display: inline-block;
+    line-height: 32px;
+    font-size: 30px;
     text-align: center
 }
 

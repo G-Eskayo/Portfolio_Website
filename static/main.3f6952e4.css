@@ -122,6 +122,13 @@ img {
     border: 0
 }
 
+.img-responsive.pull-right {
+    float: right;
+    width: auto;
+    max-width: 50%;
+    height: auto;
+}
+
 svg:not(:root) {
     overflow: hidden
 }
@@ -314,7 +321,7 @@ th {
 
     .table td,
     .table th {
-        background-color: #fff !important
+        background-color: transparent !important
     }
 
     .table-bordered td,
@@ -341,7 +348,7 @@ body {
     font-size: 11px;
     line-height: 1.78;
     color: #000;
-    background-color: #fff
+    background-color: transparent
 }
 
 button,
@@ -390,7 +397,7 @@ img {
 .img-thumbnail {
     padding: 4px;
     line-height: 1.78;
-    background-color: #fff;
+    background-color: transparent;
     border: 1px solid #ddd;
     border-radius: 0;
     -webkit-transition: all .2s ease-in-out;
@@ -1983,7 +1990,7 @@ th {
 }
 
 .table .table {
-    background-color: #fff
+    background-color: transparent
 }
 
 .table-condensed>tbody>tr>td,
@@ -2278,7 +2285,7 @@ output {
     width: 100%;
     height: 40px;
     padding: 8px 14px;
-    background-color: #fff;
+    background-color: transparent;
     background-image: none;
     border: 1px solid #000;
     border-radius: 0;
@@ -3427,7 +3434,7 @@ tbody.collapse.in {
     list-style: none;
     font-size: 11px;
     text-align: left;
-    background-color: #fff;
+    background-color: transparent;
     border: 1px solid #ccc;
     border: 1px solid rgba(0, 0, 0, .15);
     border-radius: 0;
@@ -4005,7 +4012,7 @@ tbody.collapse.in {
 .nav-tabs>li.active>a:focus,
 .nav-tabs>li.active>a:hover {
     color: #555;
-    background-color: #fff;
+    background-color: transparent;
     border: 1px solid #ddd;
     border-bottom-color: transparent;
     cursor: default
@@ -4381,17 +4388,20 @@ tbody.collapse.in {
 
 @media (min-width:768px) {
     .navbar-nav {
-        float: left;
-        margin: 0
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0;
     }
 
     .navbar-nav>li {
-        float: left
+        float: none;
+        /* Remove float */
     }
 
     .navbar-nav>li>a {
         padding-top: .5px;
-        padding-bottom: .5px
+        padding-bottom: .5px;
     }
 }
 
@@ -4548,7 +4558,7 @@ tbody.collapse.in {
 }
 
 .navbar-default {
-    background-color: #fff;
+    background-color: transparent;
     border-color: transparent
 }
 
@@ -4682,7 +4692,7 @@ fieldset[disabled] .navbar-default .btn-link:hover {
 
 .navbar-inverse .navbar-nav>li>a,
 .navbar-inverse .navbar-text {
-    color: #9d9d9d
+    color: #fff
 }
 
 .navbar-inverse .navbar-nav>.active>a,
@@ -4711,7 +4721,7 @@ fieldset[disabled] .navbar-default .btn-link:hover {
 }
 
 .navbar-inverse .navbar-toggle .icon-bar {
-    background-color: #fff
+    background-color: transparent
 }
 
 .navbar-inverse .navbar-collapse,
@@ -4896,7 +4906,7 @@ a.label:hover {
 .list-group-item.active>.badge,
 .nav-pills>.active>a>.badge {
     color: #001aff;
-    background-color: #fff
+    background-color: transparent
 }
 
 .list-group-item>.badge {
@@ -5281,7 +5291,7 @@ button.close {
     margin: 0;
     width: 12px;
     height: 12px;
-    background-color: #fff
+    background-color: transparent
 }
 
 .carousel-caption {
@@ -5716,7 +5726,7 @@ body.minimal {
 .white-text-container h4,
 .white-text-container h5,
 .white-text-container p {
-    text-shadow: 0 1px 3px #000;
+    text-shadow: 0 100px 30px #000;
     color: #fff
 }
 
@@ -5738,6 +5748,11 @@ body.minimal {
     padding: 60px 0
 }
 
+.section-container p {
+    font-size: 11px;
+    /* Change this value to the desired font size */
+}
+
 @media (min-width:1200px) {
     .section-container {
         padding: 80px 0
@@ -5755,9 +5770,30 @@ body.minimal {
 }
 
 .background-image-container {
+    position: relative;
+    /* Needed for the pseudo-element to position correctly */
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: top
+    background-position: center bottom;
+}
+
+.background-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.17);
+    /* Black with 50% opacity */
+    z-index: 1;
+    /* Ensures the overlay is above the background image */
+}
+
+.background-image-container>* {
+    position: relative;
+    /* Ensures content is above the overlay */
+    z-index: 2;
 }
 
 .btn {
@@ -6082,14 +6118,14 @@ textarea {
     right: 10px;
     top: 10px;
     z-index: 10;
-    background-color: #fff
+    background-color: transparent
 }
 
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover,
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:hover {
-    background-color: #fff
+    background-color: transparent
 }
 
 @media (min-width:768px) {
@@ -6131,7 +6167,7 @@ textarea {
 .navbar-default .navbar-toggle,
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
-    background-color: #fff
+    background-color: transparent
 }
 
 @media (max-width:768px) {
@@ -6148,7 +6184,7 @@ textarea {
     }
 
     .navbar-default .navbar-collapse {
-        background-color: #fff
+        background-color: transparent
     }
 }
 

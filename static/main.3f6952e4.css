@@ -4629,6 +4629,17 @@ tbody.collapse.in {
     color: #000
 }
 
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+  }
+  .courses li {
+    flex: 1 1 50%; /* Adjusts the basis to 50% so each item tries to take up half the width of the container */
+    margin-bottom: 10px; /* Optional: Adds some space between the rows */
+  }
+
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
     color: #333;

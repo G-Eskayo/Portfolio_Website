@@ -4629,6 +4629,34 @@ tbody.collapse.in {
     color: #000
 }
 
+.certificates-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap as needed */
+  }
+  
+  .certificate {
+    flex: 1 0 21%; /* Adjusts to fit 4 items per row, you can tweak this value */
+    max-width: 25%; /* Ensures that the item does not grow beyond 25% of the container width */
+  }
+  
+  /* Grayscale to Color Transition for Certificates */
+.certificate img {
+    width: 100%;
+    height: auto;
+    display: block;
+    -webkit-transition: filter 0.6s ease-in-out; /* For Safari and Chrome */
+    transition: filter 0.6s ease-in-out; /* Standard syntax for other browsers */
+    filter: grayscale(100%); /* Start with black and white */
+  }
+  
+  .certificate:hover img {
+    filter: grayscale(0%); /* Full color on hover */
+  }
+  
+  
+
 .courses {
     display: flex;
     flex-wrap: wrap;

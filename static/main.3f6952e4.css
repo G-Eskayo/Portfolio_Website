@@ -5194,6 +5194,28 @@ button.close {
     line-height: 1
 }
 
+/* Add this CSS to your stylesheet */
+.carousel-inner .item .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carousel-inner .item .row .col-sm-4 {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container {
+    flex: 1;
+    /* Continue to make the card container fill the available space */
+    height: 400px;
+    /* Example fixed height; adjust this value based on your content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* This helps distribute the space inside the card */
+}
+
 @media (-webkit-transform-3d),
 (transform-3d) {
     .carousel-inner>.item {

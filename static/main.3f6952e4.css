@@ -5181,6 +5181,7 @@ button.close {
 .carousel-inner>.item {
     display: none;
     position: relative;
+    height: 600px;
     -webkit-transition: left .6s ease-in-out;
     -o-transition: .6s ease-in-out left;
     transition: left .6s ease-in-out
@@ -5208,7 +5209,6 @@ button.close {
 .card-container {
     flex: 1;
     /* Continue to make the card container fill the available space */
-    height: 400px;
     /* Example fixed height; adjust this value based on your content */
     display: flex;
     flex-direction: column;
@@ -5886,9 +5886,9 @@ body.minimal {
     /* Change this value to the desired font size */
 }
 
-.card-container p:last-of-type {
+/* .card-container p:last-of-type {
     margin-bottom: 100px !important;
-}
+} */
 
 .card-container>div:last-child {
     margin-bottom: 100px;

@@ -12,12 +12,13 @@
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
 
-    <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-    <link href="./static/faviconWhite.ico" rel="icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/apple-icon-180x180.png">
+    <link href="../static/faviconWhite.ico" rel="icon">
 
     <title>SkineeDipping Build</title>
 
-    <link href="./static/main.3f6952e4.css" rel="stylesheet">
+    <link href="../static/main.3f6952e4.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body class="">
@@ -55,50 +56,180 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <img src="./static/assets/images/work001-01.jpg" class="img-responsive" alt="">
+                    <img src="../static/assets/images/work001-01.jpg" class="img-responsive" alt="">
                     <div class="card-container">
                         <div class="text-center">
                             <h1 class="h2">002 : SkineeDipping Website Build</h1>
                         </div>
                         <div> <a href=""><strong>Project Website</strong></a>
+                            <a href="https://github.com/G-Eskayo/CSCI3308_Final-Project" target="_blank" rel="noopener noreferrer" class="fa-icon">
+                                <i class="fa fa-github"></i>
+                            </a>
                             <p><strong>Creators:</strong> Gil Eskayo, Kaleb Perry, Bryce Ogburn, Joey Tursi</p>
                             <p><strong>Date:</strong> 8 December 2023</p>
 
-                            <div class="text-center"><h2>Introduction</h2></div>
-                            <p>This project aims to revolutionize the experience of Counter-Strike: Global Offensive (CS:GO) players by providing an
-                            intuitive and user-friendly platform for accessing, filtering, and purchasing in-game skins. The core feature is a
-                            sophisticated yet easy-to-use search engine, allowing players to quickly navigate through an extensive database of skins
-                            based on various parameters like rarity, color, pattern, or price range. Users can apply multiple filters simultaneously
-                            to refine their search, making it effortless to find skins that align with their specific tastes and budget.
+                            <div class="text-center">
+                                <h2>Introduction</h2>
+                            </div>
+                            <p>This project aims to revolutionize the experience of Counter-Strike: Global Offensive
+                                (CS:GO) players by providing an
+                                intuitive and user-friendly platform for accessing, filtering, and purchasing in-game
+                                skins. The core feature is a
+                                sophisticated yet easy-to-use search engine, allowing players to quickly navigate
+                                through an extensive database of skins
+                                based on various parameters like rarity, color, pattern, or price range. Users can apply
+                                multiple filters simultaneously
+                                to refine their search, making it effortless to find skins that align with their
+                                specific tastes and budget.</p>
+
+                            <p>Additionally, the platform offers detailed views of each skin, including high-resolution
+                                images, background information,
+                                and user reviews, enabling players to make informed decisions. A unique comparison tool
+                                is also available, allowing
+                                users to juxtapose different skins side-by-side for a more comprehensive evaluation.</p>
+
+                            <p>For those interested in acquiring skins, the platform facilitates a seamless purchasing
+                                process. It integrates a secure
+                                transaction system, ensuring a safe and reliable exchange. Users can buy skins directly
+                                from the platform or through
+                                trusted third-party vendors, all within a few clicks. This project not only enhances the
+                                accessibility of CS:GO skins
+                                but also enriches the overall gaming experience by making skin selection and acquisition
+                                more enjoyable and less
+                                time-consuming.
+                            </p>
+                            <div class="col-md-12 text-center">
+                                <h2>Video Demo</h2>
+                                <div class="video-responsive">
+                                    <video controls="controls" style="width: 100%; height: auto;">
+                                        <source src="../static/assets/images/website demo (2).MP4" type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <h2>Personal Contribution</h2>
+                            </div>
+                            <p>Working on the backend of our software development project has been a deeply engaging and
+                                rewarding journey. My role
+                                primarily revolved around laying the technical groundwork for the website. This task
+                                involved setting up intricate API
+                                calls that formed the backbone of key pages such as the login, register, home, discover,
+                                and user pages. This
+                                foundational work was not just about writing code; it was about crafting the core of our
+                                website's functionality and
+                                user experience.</p>
+
+                            <p>One of my major contributions was developing and managing user authentication databases.
+                                This involved creating systems
+                                to efficiently log new users, prevent the creation of duplicate usernames, and,
+                                crucially, establish user sessions upon
+                                login. This feature was pivotal in ensuring that our website remained exclusive and
+                                secure, accessible only to
+                                authenticated users.</p>
+                            <img src="../static/assets/images/SkineeDippingCaseDiagram.png"
+                                class="img-responsive pull-right" alt=""
+                                style="margin-left: 25px; margin-bottom: 15px;">
+                            <p>A particularly challenging yet fulfilling aspect of my work was integrating multer for
+                                file uploads on the user page.
+                                This feature lets users personalize their profiles with photos and descriptions, stored
+                                in a dedicated 'userPage' table.
+                                Implementing multer pushed me into new territories, requiring me to reconfigure the
+                                docker-compose.yaml file and craft a
+                                Dockerfile to ensure smooth integration and operation.</p>
+
+                            <p>Towards the end of the project, I focused on developing the bookmark feature, a task that
+                                involved navigating through
+                                various backend complexities. This phase of the project was challenged when our API keys
+                                were blocked, exemplifying the
+                                unpredictable nature of software development and the reliance on external services.</p>
+                            <p>Throughout this project, my role has been a blend of technical rigour and creative
+                                problem-solving, contributing
+                                significantly to shaping the website's functionality and curating the overall user
+                                experience.</p>
+                            <div class="text-center">
+                                <h2>Technology Stack</h2>
+                            </div>
+                            <div class="language-breakdown">
+                                <div id="language-bar"
+                                    style="display: flex; height: 25px; border-radius: 5px; overflow: hidden; margin-bottom: 10px;">
+                                    <div style="width: 51.9%; background-color: #A91E50;"></div>
+                                    <div style="width: 42.0%; background-color: #f1e05a;"></div>
+                                    <div style="width: 5.4%; background-color: #563d7c;"></div>
+                                    <div style="width: 0.7%; background-color: #384d54;"></div>
+                                </div>
+                                <div class="language-legend">
+                                    <span class="language-color" style="background-color: #A91E50;"></span> <span class="language-name">EJS 51.9%</span>
+                                    |
+                                    <span class="language-color" style="background-color: #f1e05a;"></span> <span class="language-name">JavaScript
+                                        42.0%</span> |
+                                    <span class="language-color" style="background-color: #563d7c;"></span> <span class="language-name">CSS 5.4%</span>
+                                    |
+                                    <span class="language-color" style="background-color: #384d54;"></span> <span class="language-name">Dockerfile
+                                        0.7%</span>
+                                </div>
+
+                            </div>
+
+                            <ul>
+                                <li>Programming Languages: Python 3.9, JavaScript (Node.js)</li>
+                                <li>Web Framework: Flask (Python) for the backend</li>
+                                <li>Frontend Framework: React</li>
+                                <li>Database: PostgreSQL for storing skin pricing data</li>
+                                <li>API Development: Flask-RESTful for building the API endpoints</li>
+                                <li>Web Development Tools: HTML, CSS, JavaScript, Bootstrap for frontend design</li>
+                                <li>Data Analysis and Visualization: Pandas, Matplotlib, D3.js</li>
+                                <li>Containerization: Docker for creating development and deployment environments</li>
+                                <li>Version Control: Git and GitHub for source code management</li>
+                                <li>Hosting and Deployment: AWS for cloud hosting, Docker Compose for container orchestration</li>
+                            </ul>
                             
-                            Additionally, the platform offers detailed views of each skin, including high-resolution images, background information,
-                            and user reviews, enabling players to make informed decisions. A unique comparison tool is also available, allowing
-                            users to juxtapose different skins side-by-side for a more comprehensive evaluation.
-                            
-                            For those interested in acquiring skins, the platform facilitates a seamless purchasing process. It integrates a secure
-                            transaction system, ensuring a safe and reliable exchange. Users can buy skins directly from the platform or through
-                            trusted third-party vendors, all within a few clicks. This project not only enhances the accessibility of CS:GO skins
-                            but also enriches the overall gaming experience by making skin selection and acquisition more enjoyable and less
-                            time-consuming.
+                            <div class="text-center">
+                                <h2>Prequisites</h2>
+                            </div>
+                            <ul>
+                                <li>Javascript (Node.js)</li>
+                                <li>PostgreSQL for the database</li>
+                                <li>Official API: The steam API</li>
+                                <li>HTML, CSS, Javascript, Bootstrap for front-end applications</li>
+                                <li>Containers will be using Docker, so having the latest version of Docker</li>
+                                <li>Git and Github for collaborative work with other members</li>
+                                <li>To run the container using Docker, make sure the "docker-compose.yaml" file has the correct code to run properly
+                                    (the code is given in the final project). Make sure that all other containers currently running are shut down in
+                                    order to run the current container for this project. To run the test, make sure Docker is running and open the
+                                    localhost then start testing the code on your browser.</li>
+                            </ul>
+                            <div class="text-center">
+                                <h2>Deployment</h2>
+                            </div>
+                            <p>In order to create a running accessible website for our project, we used Microsoft Azure
+                                to host a virtual machine that
+                                ran on linux. On the vm, I was able to download all the necessary docker files and then
+                                clone our github repository.
+                                After cloning the code locally on the vm, the docker file was available to be executed
+                                in order to get the site up and
+                                running for others to access without running any code on their own computer. The dns for
+                                our site was composed of our
+                                recitation number and our team number.</p>
+                            <p>There is a limit to how long we could keep the website up with Azure so after to
+                                completion of the project I put it up
+                                with Amazon Web Services.
                             </p>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
+    </div>
 
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            navActivePage();
+        });
+    </script>
 
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function (event) {
-                navActivePage();
-            });
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
 <script>
   (function (i, s, o, g, r, a, m) {
@@ -112,7 +243,7 @@
 </script>
 
 -->
-        <script type="text/javascript" src="./static/main.70a66962.js"></script>
+    <script type="text/javascript" src="../static/main.70a66962.js"></script>
 </body>
 
 </html>

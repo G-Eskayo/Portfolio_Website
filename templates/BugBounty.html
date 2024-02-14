@@ -12,12 +12,12 @@
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link href="./static/faviconWhite.ico" rel="icon">
+  <link rel="apple-touch-icon" sizes="180x180" href="../static/assets/apple-icon-180x180.png">
+  <link href="../static/faviconWhite.ico" rel="icon">
 
   <title>Bug Bounty</title>
 
-  <link href="./static/main.3f6952e4.css" rel="stylesheet">
+  <link href="../static/main.3f6952e4.css" rel="stylesheet">
 </head>
 
 <body class="">
@@ -55,159 +55,155 @@
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <img src="./static/assets/images/work001-01.jpg" class="img-responsive" alt="">
+          <img src="../static/assets/images/work001-01.jpg" class="img-responsive" alt="">
           <div class="card-container">
             <div class="text-center">
               <h1 class="h2">001 : Yahoo Bug Bounty</h1>
             </div>
-            <div class="text-center">
-              <h2>Individual Security Vulnerability Assessment Report: Yahoo</h2>
-            </div>
-            <p><strong>Author:</strong> Gil Eskayo</p>
-            <p><strong>Date:</strong> 10 December 2023</p>
 
-            <div class="text-center">
-              <h2>Introduction</h2>
-            </div>
-            <p>This report documents my individual security assessment conducted against Yahoo, as part of a Real World
-              Pentest lab
-              exercise. My objective was to identify potential client-side security vulnerabilities within the scope
-              defined by
-              Yahoo's public bug bounty program on HackerOne.</p>
+            <div>
+              <p><strong>Author:</strong> Gil Eskayo</p>
+              <p><strong>Date:</strong> 10 December 2023</p>
 
-            <div class="text-center">
-              <h2>Scope of the Test</h2>
-            </div>
-            <ul>
-              <li>Target: Yahoo (<a href="https://www.yahoo.com">https://www.yahoo.com</a>)</li>
-              <li>Bug Bounty Program URL: <a
-                  href="https://hackerone.com/yahoo?type=team">https://hackerone.com/yahoo?type=team</a>
-              </li>
-              <li>My testing was confined to the domains and IP addresses specified in the bug bounty program.</li>
-              <li>I conducted testing using my personal account without affecting other users.</li>
-              <li>I avoided any actions that could cause permanent changes or data deletion.</li>
-            </ul>
-            <h3>Testing Approach</h3>
-            <p>In conducting the security assessment of Yahoo's web application, I employed a strategic combination of
-              manual
-              inspection, browser developer tools, and specialized security tools, each chosen for its specific
-              capabilities in
-              identifying different types of vulnerabilities...</p>
+              <div class="text-center">
+                <h2>Individual Security Vulnerability Assessment Report: Yahoo</h2>
+              </div>
 
-            <h4>Client-Side Data Manipulation</h4>
-            <p><strong>Detailed Test:</strong> To test for client-side data manipulation vulnerabilities, I used browser
-              developer
-              tools to inspect and modify data stored in the browser, such as cookies, localStorage, and
-              sessionStorage...</p>
+              <p>This report documents my individual security assessment conducted against Yahoo, as part of a Real
+                World
+                Pentest lab
+                exercise. My objective was to identify potential client-side security vulnerabilities within the scope
+                defined by
+                Yahoo's public bug bounty program on HackerOne.</p>
 
-            <pre><code>// JavaScript snippet to inspect and modify client-side data
+              <div class="text-center">
+                <h2>Scope of the Test</h2>
+              </div>
+              <ul>
+                <li>Target: Yahoo (<a href="https://www.yahoo.com">https://www.yahoo.com</a>)</li>
+                <li>Bug Bounty Program URL: <a
+                    href="https://hackerone.com/yahoo?type=team">https://hackerone.com/yahoo?type=team</a>
+                </li>
+                <li>My testing was confined to the domains and IP addresses specified in the bug bounty program.</li>
+                <li>I conducted testing using my personal account without affecting other users.</li>
+                <li>I avoided any actions that could cause permanent changes or data deletion.</li>
+              </ul>
+              <h3>Testing Approach</h3>
+              <p>In conducting the security assessment of Yahoo's web application, I employed a strategic combination of
+                manual
+                inspection, browser developer tools, and specialized security tools, each chosen for its specific
+                capabilities in
+                identifying different types of vulnerabilities...</p>
+
+              <h4>Client-Side Data Manipulation</h4>
+              <p><strong>Detailed Test:</strong> To test for client-side data manipulation vulnerabilities, I used
+                browser
+                developer
+                tools to inspect and modify data stored in the browser, such as cookies, localStorage, and
+                sessionStorage...</p>
+
+              <pre><code>// JavaScript snippet to inspect and modify client-side data
               let userData = JSON.parse(localStorage.getItem('userPreferences'));
               userData.theme = 'dark'; // Altering a preference
               localStorage.setItem('userPreferences', JSON.stringify(userData));
                   </code></pre>
 
-            <h4>Cross-Site Request Forgery (CSRF)</h4>
-            <p><strong>Detailed Test:</strong> Using Burp Suite, I created a mock HTML form to simulate a CSRF attack...
-            </p>
+              <h4>Cross-Site Request Forgery (CSRF)</h4>
+              <p><strong>Detailed Test:</strong> Using Burp Suite, I created a mock HTML form to simulate a CSRF
+                attack...
+              </p>
 
-            <pre><code>&lt;!-- HTML snippet to create a forged request --&gt;
+              <pre><code>&lt;!-- HTML snippet to create a forged request --&gt;
               &lt;form action="https://www.yahoo.com/settings" method="POST" target="_blank"&gt;
                   &lt;input type="hidden" name="newSetting" value="alteredSetting"&gt;
                   &lt;input type="submit" value="Submit Request"&gt;
               &lt;/form&gt;
                   </code></pre>
 
-            <!-- Cross-Site Scripting (XSS) -->
-            <h4>Cross-Site Scripting (XSS)</h4>
-            <p><strong>Detailed Test:</strong> I tested for XSS vulnerabilities by injecting JavaScript code into
-              various input
-              fields and observing the application's response...</p>
-            <pre><code>&lt;script&gt;alert('XSS Test');&lt;/script&gt;</code></pre>
+              <!-- Cross-Site Scripting (XSS) -->
+              <h4>Cross-Site Scripting (XSS)</h4>
+              <p><strong>Detailed Test:</strong> I tested for XSS vulnerabilities by injecting JavaScript code into
+                various input
+                fields and observing the application's response...</p>
+              <pre><code>&lt;script&gt;alert('XSS Test');&lt;/script&gt;</code></pre>
 
-            <!-- SQL Injection -->
-            <h4>SQL Injection</h4>
-            <p><strong>Detailed Test:</strong> SQL Injection vulnerabilities were tested by inputting SQL code into
-              fields that
-              interact with the database...</p>
-            <pre><code>' OR '1'='1</code></pre>
+              <!-- SQL Injection -->
+              <h4>SQL Injection</h4>
+              <p><strong>Detailed Test:</strong> SQL Injection vulnerabilities were tested by inputting SQL code into
+                fields that
+                interact with the database...</p>
+              <pre><code>' OR '1'='1</code></pre>
 
-            <!-- Buffer Overflow -->
-            <h4>Buffer Overflow</h4>
-            <p><strong>Detailed Test:</strong> To test for buffer overflow vulnerabilities, I input excessively long
-              strings into
-              input fields...</p>
-            <pre><code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...</code></pre>
+              <!-- Buffer Overflow -->
+              <h4>Buffer Overflow</h4>
+              <p><strong>Detailed Test:</strong> To test for buffer overflow vulnerabilities, I input excessively long
+                strings into
+                input fields...</p>
+              <pre><code>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA...</code></pre>
 
-            <!-- Findings -->
-            <h3>Client-Side Data Manipulation</h3>
-            <p>The investigation into client-side data revealed that Yahoo effectively secures sensitive information...
-            </p>
+              <!-- Findings -->
+              <h3>Client-Side Data Manipulation</h3>
+              <p>The investigation into client-side data revealed that Yahoo effectively secures sensitive
+                information...
+              </p>
 
-            <h3>Cross-Site Request Forgery (CSRF)</h3>
-            <p>The CSRF test did not yield any successful unauthorized actions...</p>
+              <h3>Cross-Site Request Forgery (CSRF)</h3>
+              <p>The CSRF test did not yield any successful unauthorized actions...</p>
 
-            <h3>Cross-Site Scripting (XSS)</h3>
-            <p>The XSS vulnerability test showed that Yahoo has implemented strong input validation and output encoding
-              mechanisms...</p>
+              <h3>Cross-Site Scripting (XSS)</h3>
+              <p>The XSS vulnerability test showed that Yahoo has implemented strong input validation and output
+                encoding
+                mechanisms...</p>
 
-            <h3>SQL Injection</h3>
-            <p>During the SQL Injection testing phase, all inputs were properly sanitized...</p>
+              <h3>SQL Injection</h3>
+              <p>During the SQL Injection testing phase, all inputs were properly sanitized...</p>
 
-            <h3>Buffer Overflow</h3>
-            <p>The buffer overflow tests involved submitting excessively long strings in various input fields...</p>
+              <h3>Buffer Overflow</h3>
+              <p>The buffer overflow tests involved submitting excessively long strings in various input fields...</p>
 
-            <!-- Recommendations -->
+              <!-- Recommendations -->
 
-            <div class="text-center">
-              <h2>Recommendations</h2>
+              <div class="text-center">
+                <h2>Recommendations</h2>
+              </div>
+              <p>Despite the absence of identified vulnerabilities in this assessment, maintaining a robust security
+                posture is an
+                ongoing process...</p>
+
+              <ul>
+                <li>Conduct regular and comprehensive security audits...</li>
+                <li>Perform thorough code reviews, particularly of client-side scripts...</li>
+                <li>Implement or enhance continuous monitoring and logging mechanisms...</li>
+                <!-- Add more recommendations as needed -->
+              </ul>
+
+              <!-- Conclusion -->
+              <div class="text-center">
+                <h2>Conclusion</h2>
+              </div>
+              <p>This security assessment of Yahoo's web platform, conducted within the defined scope and parameters of
+                their public
+                bug bounty program, did not reveal any direct vulnerabilities...</p>
+              <p>It is crucial to acknowledge that cybersecurity is a dynamic field...</p>
+              <p>In conclusion, while this assessment did not identify specific vulnerabilities within the scope of the
+                bug bounty
+                program, it highlights the importance of continuous vigilance and adaptation in the field of
+                cybersecurity...</p>
             </div>
-            <p>Despite the absence of identified vulnerabilities in this assessment, maintaining a robust security
-              posture is an
-              ongoing process...</p>
-
-            <ul>
-              <li>Conduct regular and comprehensive security audits...</li>
-              <li>Perform thorough code reviews, particularly of client-side scripts...</li>
-              <li>Implement or enhance continuous monitoring and logging mechanisms...</li>
-              <!-- Add more recommendations as needed -->
-            </ul>
-
-            <!-- Conclusion -->
-            <div class="text-center">
-              <h2>Conclusion</h2>
-            </div>
-            <p>This security assessment of Yahoo's web platform, conducted within the defined scope and parameters of
-              their public
-              bug bounty program, did not reveal any direct vulnerabilities...</p>
-            <p>It is crucial to acknowledge that cybersecurity is a dynamic field...</p>
-            <p>In conclusion, while this assessment did not identify specific vulnerabilities within the scope of the
-              bug bounty
-              program, it highlights the importance of continuous vigilance and adaptation in the field of
-              cybersecurity...</p>
-
           </div>
         </div>
+      </div>
+    </div>
+  </div>
 
 
-        <footer class="footer-container text-center">
-          <div class="container">
-            <div class="row">
-              <div class="col-xs-12">
-                <p>© UNTITLED | Website created with <a href="http://www.mashup-template.com/"
-                    title="Create website with free html template">Mashup Template</a>/<a
-                    href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
-              </div>
-            </div>
-          </div>
-        </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      navActivePage();
+    });
+  </script>
 
-        <script>
-          document.addEventListener("DOMContentLoaded", function (event) {
-            navActivePage();
-          });
-        </script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+  <!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
 
 <script>
   (function (i, s, o, g, r, a, m) {
@@ -221,7 +217,7 @@
 </script>
 
 -->
-        <script type="text/javascript" src="./static/main.70a66962.js"></script>
+  <script type="text/javascript" src="../static/main.70a66962.js"></script>
 </body>
 
 </html>
